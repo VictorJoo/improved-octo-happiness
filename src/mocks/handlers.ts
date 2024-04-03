@@ -16,7 +16,11 @@ const User = [
 ]
 const Posts = [];
 
-export const handlers = [
+const delay = (ms: number) => new Promise((res) => {
+    setTimeout(res, ms);
+})
+
+export const  handlers = [
     http.post('/api/login', () => {
         console.log('로그인');
         return HttpResponse.json(User[1], {
@@ -99,7 +103,8 @@ export const handlers = [
             ]
         )
     }),
-    http.get('/api/followingPosts', ({ request }) => {
+    http.get('/api/followingPosts', async ({ request }) => {
+        await delay(3000);
         return HttpResponse.json(
             [
                 {
