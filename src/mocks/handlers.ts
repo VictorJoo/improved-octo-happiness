@@ -14,8 +14,6 @@ const User = [
     {id: 'zerohch0', nickname: '제로초', image: '/5Udwvqim.jpg'},
     {id: 'leoturtle', nickname: '레오', image: faker.image.avatar()},
 ]
-const Posts = [];
-
 const delay = (ms: number) => new Promise((res) => {
     setTimeout(res, ms);
 })
@@ -104,7 +102,7 @@ export const  handlers = [
         )
     }),
     http.get('/api/followingPosts', async ({ request }) => {
-        await delay(3000);
+        // await delay(3000);
         return HttpResponse.json(
             [
                 {
