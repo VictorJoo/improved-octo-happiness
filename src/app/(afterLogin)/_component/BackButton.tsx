@@ -1,17 +1,10 @@
 "use client"
 
 import style from "@/app/(afterLogin)/[username]/profile.module.css";
-import {useRouter} from "next/navigation";
+
 export default function BackButton() {
-    const router = useRouter();
-
-    const onClickBack = () => {
-        router.back();
-        // TODO: 뒤로가기가 /home이 아니면 /home으로 보내기
-    }
-
   return (
-    <button className={style.backButton} onClick={onClickBack}>
+    <button className={style.backButton}>
       <svg width={24} viewBox="0 0 24 24" aria-hidden="true"
            className="r-18jsvk2 r-4qtqp9 r-yyyyoo r-z80fyv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-19wmn03">
         <g>

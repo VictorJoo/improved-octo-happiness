@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
 import style from "@/app/(afterLogin)/_component/rightSearchZone.module.css";
-import {FormEventHandler} from "react";
 import {useRouter} from "next/navigation";
+import {FormEventHandler} from "react";
 
 type Props = { q?: string }
 export default function SearchForm({ q }: Props) {
-    const router = useRouter();
-    const onSubmit : FormEventHandler<HTMLFormElement> = (event) =>{
-        event.preventDefault();
-        router.push(`/search?q=${event.currentTarget.search.value}`)
-    }
-    
-    return (
+  const router = useRouter();
+  const onSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    router.push(`/search?q=${event.currentTarget.search.value}`);
+  }
+
+  return (
     <form className={style.search} onSubmit={onSubmit}>
       <svg width={20} viewBox="0 0 24 24" aria-hidden="true">
         <g>
